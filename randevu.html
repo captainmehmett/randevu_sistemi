@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevu Al - Hastane Adı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="randevu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Yükleniyor animasyonu -->
+    <div class="loader-container">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+            </svg>
+            <p>Yükleniyor...</p>
+        </div>
+    </div>
+
+    <!-- Mevcut içerik -->
+    <div class="randevu-content" style="display: none;">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <!-- navbar içeriği -->
+        </nav>
+
+        <div class="randevu-container">
+            <div class="randevu-header">
+                <h2>Online Randevu</h2>
+                <p>Randevu almak için lütfen aşağıdaki formu doldurunuz</p>
+            </div>
+
+            <div class="randevu-form">
+                <form id="appointmentForm">
+                    <!-- Kişisel Bilgiler -->
+                    <div class="form-section">
+                        <h3>Kişisel Bilgiler</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Ad Soyad</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="tc" name="tc" required>
+                            <label for="tc">T.C. Kimlik No</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Telefon</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">E-posta</label>
+                        </div>
+                    </div>
+
+                    <!-- Randevu Detayları -->
+                    <div class="form-section">
+                        <h3>Randevu Bilgileri</h3>
+                        <div class="form-group">
+                            <select id="department" name="department" required>
+                                <option value="">Branş Seçiniz</option>
+                                <option value="ic-hastaliklari">İç Hastalıkları</option>
+                                <option value="noroloji">Nöroloji</option>
+                                <option value="ortopedi">Ortopedi</option>
+                                <!-- Diğer branşlar -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="doctor" name="doctor" required>
+                                <option value="">Doktor Seçiniz</option>
+                                <!-- JavaScript ile doldurulacak -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="date" name="date" required>
+                            <label for="date">Randevu Tarihi</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="time" name="time" required>
+                                <option value="">Randevu Saati Seçiniz</option>
+                                <!-- JavaScript ile doldurulacak -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Randevu Oluştur</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- footer içeriği -->
+        </footer>
+    </div>
+
+  
+    <script src="randevu.js"></script>
+</body>
+</html>

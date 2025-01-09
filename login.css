@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-form {
+    width: 50%;
+    padding: 15px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100vh;
+    margin-top: 100px; /* Form'u aşağıya almak için margin ekledik */
+}
+
+/* ... diğer stiller aynı kalacak ... */
+
+.login-form > * {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.login-image {
+    width: 50%;
+    background-image: url('images/login4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Gap'i azalttık */
+    margin-bottom: 15px; /* Margin'i azalttık */
+    justify-content: center;
+}
+
+.logo-container img {
+    height: 50px; /* Logo boyutunu küçülttük */
+}
+
+
+.form-group {
+    margin-bottom: 12px; /* Margin'i azalttık */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Gap'i azalttık */
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 8px 12px; /* Padding'i azalttık */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px; /* Font boyutunu küçülttük */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.btn-giris {
+    background-color: #26b99a; /* Yeşil renk güncellendi */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btn-uye {
+    text-decoration: none; /* Eklendi */
+    background-color: #3498db;
+    background-color: #3498db; /* Mavi renk güncellendi */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info {
+    margin-top: 40px;
+    color: #666;
+    font-size: 14px;
+}
+.contact-info a {
+    color: #26b99a; /* Link rengi güncellendi */
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .login-image {
+        display: none;
+    }
+    
+    .login-form {
+        width: 100%;
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .logo-container {
+        margin-bottom: 30px;
+    }
+
+    .logo-container img {
+        height: 40px;
+    }
+
+    input, select {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .btn-giris, .btn-uye {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+}
+
+/* iPhone SE gibi küçük ekranlar için ek düzenlemeler */
+@media (max-width: 375px) {
+    .login-form {
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    .logo-container img {
+        height: 35px;
+    }
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Sayfa geçiş animasyonu için yeni stiller */
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.form-group label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.input-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-with-icon input {
+    padding-left: 35px; /* İkon için sol padding ekledik */
+}
+
+/* Loading overlay stilleri */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #26b99a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loading-text {
+    color: #333;
+    font-size: 18px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Sayfa geçiş animasyonu */
+.fade-out {
+    animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Hata bildirimi için yeni stiller */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: #ff3333;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+}
+
+.notification i {
+    font-size: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.back-button {
+    position: fixed; /* Ekranın sol üst köşesine sabitlemek için fixed kullanıyoruz */
+    top: 20px; /* Ekranın üstünden 20px aşağıda */
+    left: 20px; /* Ekranın solundan 20px içeride */
+    width: 40px;
+    height: 40px;
+    background-color: #26b99a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.back-button:hover {
+    background-color: #1f9c82;
+    transform: scale(1.05);
+}
+
+.back-button i {
+    font-size: 18px;
+}
+
+/* Mobil uyumluluk için */
+@media (max-width: 768px) {
+    .back-button {
+        top: 15px;
+        left: 15px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+input:focus {
+    outline: none; /* Siyah çerçeveyi kaldır */
+}
+
+/* Kırmızı çerçeve için */
+.input-error {
+    border-color: #ff0000 !important; /* Kırmızı çerçeve */
+    box-shadow: 0 0 0 1px #ff0000; /* Ek vurgu için */
+}
+
+/* Yeşil çerçeve için */
+.input-valid {
+    border-color: #26b99a !important; /* Yeşil çerçeve */
+    box-shadow: 0 0 0 1px #26b99a; /* Ek vurgu için */
+}
+

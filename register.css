@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body {
+    animation: fadeIn 0.5s;
+}
+
+
+.register-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.register-form {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.register-form > * {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#registerForm {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.register-image {
+    width: 50%;
+    background-image: url('images/login4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Gap'i azalttık */
+    margin-bottom: 15px; /* Margin'i azalttık */
+    justify-content: center;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.form-group {
+    margin-bottom: 12px; /* Margin'i azalttık */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Gap'i azalttık */
+    width: 100%;
+}
+.form-group label {
+    font-size: 13px; /* Font boyutunu küçülttük */
+}
+
+
+.required {
+    color: #ff0000;
+    margin-right: 4px; /* Yıldız ile metin arasında boşluk bırakır */
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 12px; /* Padding'i azalttık */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px; /* Font boyutunu küçülttük */
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 31px; /* Göz ikonunun pozisyonunu ayarladık */
+    cursor: pointer;
+    color: #666;
+}
+
+.btn-register {
+    background-color: #26b99a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.login-link {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.contact-info {
+    max-width: 500px;
+    margin: 20px auto 0;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #26b99a;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .register-image {
+        display: none;
+    }
+    
+    .register-form {
+        width: 100%;
+    }
+}
+/* Scroll bar stilleri */
+.register-form::-webkit-scrollbar {
+    width: 8px;
+}
+
+.register-form::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.register-form::-webkit-scrollbar-thumb {
+    background: #26b99a;
+    border-radius: 4px;
+}
+
+.register-form::-webkit-scrollbar-thumb:hover {
+    background: #1e9c82;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-out {
+    animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
